@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8f0a1c">
+<meta name="description" content="PIZZAKY.AJA — pizza sosis jumbo Sausage Day. Pesan online, level pedas 1–7, checkout langsung ke WhatsApp.">
+<title>PIZZAKY.AJA — Taste The Happiness</title>
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#beranda" aria-label="PIZZAKY.AJA beranda">
+      <img id="brandLogo" src="/images/logo.svg" alt="">
+      <span class="brand-name" id="brandName">PIZZAKY.AJA
+        <span class="brand-sub" id="brandSub">Taste The Happiness</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigasi utama">
+      <a href="#beranda" class="active">Beranda</a>
+      <a href="#menu">Menu</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn-wa-head" id="waHead" href="#" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.5-4.1-.2-.3-1.1-1.4-1.1-2.7 0-1.3.7-1.9 1-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.7.8c.3.1.5.2.5.3.1.2.1.9-.1 1.5z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button class="cart-btn" id="cartBtn" aria-label="Buka keranjang">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h2.5l2.6 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+        <span class="label">Keranjang</span>
+        <span class="count" id="cartCount">0</span>
+      </button>
+      <button class="hamb" id="hamb" aria-label="Menu navigasi" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="beranda">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="hero-badge">🌭 Sausage Day <b>SETIAP HARI</b></span>
+        <h1>Pizza sosis jumbo,<br><em>bahagia dalam gigitan.</em></h1>
+        <p class="hero-lead" id="heroLead">Sosis sapi panggang melingkar, keju mozzarella lumer, dan saus mustard rahasia. Dibuat fresh setelah kamu pesan — bukan dipanaskan ulang.</p>
+        <div class="hero-cta">
+          <a class="btn btn-yellow" href="#menu">
+            Pesan Sekarang
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-outline" href="#menu">Lihat Menu</a>
+        </div>
+        <ul class="hero-facts">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd08" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> <b>Fresh</b> dibuat saat dipesan</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd08" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Level pedas <b>1–7</b></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd08" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pesan lewat <b>WhatsApp</b></li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <div class="hero-sticker">SAUSAGE<br>DAY!<small>EXTRA SOSIS</small></div>
+        <img src="/images/hero-pizza.svg" alt="Pizza sosis jumbo PIZZAKY.AJA" width="430" height="430">
+        <div class="hero-price"><small>Mulai dari</small><b id="heroPrice">Rp75.000</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="promo-strip">
+    <ul class="wrap promo-inner">
+      <li>🌭 <b>Sausage Day</b> potongan harga sosis ekstra</li>
+      <li>🛵 Gratis antar radius 5 km</li>
+      <li>🔥 Level pedas 1–7, pilih sesuai selera</li>
+      <li>🧀 Keju mozzarella melimpah</li>
+    </ul>
+  </div>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Menu Favorit</span>
+          <h2>Pilih pizza yang bikin kamu balik lagi</h2>
+          <p>Cari berdasarkan nama, saring sesuai kategori, level pedas, dan ukuran. Semua harga sudah termasuk pajak.</p>
+        </div>
+      </div>
+
+      <div class="menu-tools">
+        <div class="search-box">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label class="sr-only" for="searchInput">Cari produk</label>
+          <input id="searchInput" type="search" placeholder="Cari pizza… contoh: sosis, mayo, pedas" autocomplete="off">
+        </div>
+        <div class="chips" id="categoryChips" role="group" aria-label="Filter kategori"></div>
+        <div class="filters">
+          <label for="spiceFilter">Level pedas</label>
+          <select id="spiceFilter">
+            <option value="">Semua level</option>
+            <option value="0">Tidak pedas (0)</option>
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5</option>
+            <option value="6">Level 6</option>
+            <option value="7">Level 7 — paling pedas</option>
+          </select>
+          <label for="sizeFilter">Ukuran</label>
+          <select id="sizeFilter">
+            <option value="">Semua ukuran</option>
+          </select>
+          <label for="sortFilter">Urutkan</label>
+          <select id="sortFilter">
+            <option value="default">Rekomendasi</option>
+            <option value="cheap">Harga termurah</option>
+            <option value="expensive">Harga termahal</option>
+            <option value="name">Nama A–Z</option>
+          </select>
+          <span class="spacer"></span>
+          <span class="result-count" id="resultCount"></span>
+          <button class="link-btn" id="resetFilters" type="button">Reset filter</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid" aria-live="polite">
+        <div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section steps" id="cara-pesan">
+    <div class="wrap">
+      <span class="eyebrow">Mudah &amp; Cepat</span>
+      <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;margin-top:10px">Pesan pizza cuma 3 langkah</h2>
+      <div class="step-grid">
+        <div class="step"><b>1</b><h3>Pilih pizza favorit</h3><p>Tambahkan ke keranjang, atur jumlahnya. Stok selalu diperbarui langsung dari dapur.</p></div>
+        <div class="step"><b>2</b><h3>Isi data pesanan</h3><p>Nama, nomor WhatsApp, dan alamat. Pesanan langsung tercatat di sistem toko.</p></div>
+        <div class="step"><b>3</b><h3>Konfirmasi via WhatsApp</h3><p>Klik kirim ke WhatsApp untuk konfirmasi. Kami balas dengan estimasi waktu pembuatan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lokasi">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Outlets</span>
+          <h2>Mampir ke outlet kami</h2>
+          <p>Ambil langsung di outlet supaya pizza masih panas, atau minta diantar ke rumah.</p>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:26px">
+        <div class="map-card">
+          <iframe id="mapFrame" title="Lokasi outlet PIZZAKY.AJA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+          <div class="map-foot">
+            <span id="mapCaption">Outlet utama</span>
+            <a class="link-btn" id="mapsLink" href="#" target="_blank" rel="noopener">Buka di Google Maps</a>
+          </div>
+        </div>
+        <div>
+          <div class="info-list">
+            <div class="info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <div><b>Alamat outlet</b><span id="storeAddress">Memuat alamat…</span></div>
+            </div>
+            <div class="info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div><b>Jam operasional</b><span id="storeHours">Memuat jam…</span></div>
+            </div>
+            <div class="info-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19 19 0 0 1-8.3-3 18.6 18.6 0 0 1-5.7-5.7 19 19 0 0 1-3-8.3A2 2 0 0 1 4.9 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L9 9.7a15 15 0 0 0 5.3 5.3l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              <div><b>Telepon / WhatsApp</b><a id="storePhone" href="#">Memuat…</a></div>
+            </div>
+          </div>
+          <a class="btn btn-red" id="locationCta" href="#menu" style="margin-top:18px">Pesan untuk diambil di outlet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="tentang">
+    <div class="wrap two-col">
+      <div>
+        <span class="eyebrow">Tentang Kami</span>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:900;margin-top:10px">Dapur kecil, rasa yang serius.</h2>
+        <p style="color:var(--muted);margin-top:14px;font-size:15px">
+          PIZZAKY.AJA lahir dari obsesi sederhana: pizza dengan sosis yang benar-benar banyak.
+          Setiap adonan difermentasi 24 jam, setiap pizza dipanggang di batu suhu tinggi, dan
+          setiap saus dibuat sendiri setiap pagi. Kami percaya makanan enak tidak harus mahal.
+        </p>
+        <div class="about-stats">
+          <div><b>24 jam</b><span>FERMENTASI ADONAN</span></div>
+          <div><b>100%</b><span>SOSIS SAPI PILIHAN</span></div>
+          <div><b>15 mnt</b><span>RATA-RATA PEMANGGANGAN</span></div>
+        </div>
+      </div>
+      <div class="about-art">
+        <img src="/images/trio-party.svg" alt="Trio Sausage Party" width="420" height="420">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontak">
+    <div class="wrap">
+      <span class="eyebrow">Kontak</span>
+      <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;margin-top:10px">Ada pertanyaan? Kami siap bantu.</h2>
+      <div class="contact-grid">
+        <a class="contact-card" id="contactWa" href="#" target="_blank" rel="noopener">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.5-4.1-.2-.3-1.1-1.4-1.1-2.7 0-1.3.7-1.9 1-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.7.8c.3.1.5.2.5.3.1.2.1.9-.1 1.5z"/></svg></div>
+          <b>WhatsApp</b><span id="contactWaText">Hubungi kami</span>
+        </a>
+        <a class="contact-card" id="contactEmail" href="#">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <b>Email</b><span id="contactEmailText">Memuat…</span>
+        </a>
+        <a class="contact-card" id="contactIg" href="#" target="_blank" rel="noopener">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></div>
+          <b>Instagram</b><span id="contactIgText">@pizzaky.aja</span>
+        </a>
+        <div class="contact-card">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <b>Jam buka</b><span id="contactHours">Memuat…</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="/images/logo.svg" alt="">
+          <b>PIZZAKY.AJA</b>
+        </div>
+        <p id="footerTagline">Taste The Happiness — Sausage Day Every Day!</p>
+        <p style="font-size:12px;color:#d7b0b0;margin-top:10px">Pizza fresh, sosis jumbo, harga jujur. Dibuat dengan cinta di Jakarta.</p>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <a href="#menu">Menu</a>
+        <a href="#lokasi">Lokasi</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <a id="footerWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="footerEmail" href="#">Email</a>
+        <p id="footerAddress">—</p>
+        <a href="/admin">Login Admin</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> PIZZAKY.AJA. Semua hak dilindungi.</span>
+      <span>Dibuat dengan 🍕 &amp; 🌭</span>
+    </div>
+  </div>
+</footer>
+
+<!-- cart -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Keranjang belanja" aria-hidden="true">
+  <div class="cart-head">
+    <div>
+      <h2>Keranjang Kamu</h2>
+      <small id="cartHeadNote">0 item dipilih</small>
+    </div>
+    <button class="icon-btn" id="closeCart" aria-label="Tutup keranjang">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-foot" id="cartFoot">
+    <div class="sum-row"><span>Subtotal</span><span id="cartSubtotal">Rp0</span></div>
+    <div class="sum-row"><span>Pengantaran (radius 5 km)</span><span>Gratis</span></div>
+    <div class="sum-row total"><span>Total</span><b id="cartTotal">Rp0</b></div>
+    <button class="btn btn-red btn-block" id="checkoutBtn" style="margin-top:12px" disabled>Checkout Sekarang</button>
+    <button class="link-btn" id="clearCart" style="display:block;margin:12px auto 0">Kosongkan keranjang</button>
+    <p class="note">Pesanan dicatat di sistem kami, lalu dikonfirmasi lewat WhatsApp.</p>
+  </div>
+</aside>
+
+<!-- checkout modal -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-card">
+    <div class="modal-head">
+      <div>
+        <h2 id="checkoutTitle">Data Pesanan</h2>
+        <p>Isi data dengan benar supaya kurir tidak tersesat.</p>
+      </div>
+      <button class="icon-btn" data-close-modal aria-label="Tutup">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="checkoutForm" novalidate>
+        <div class="order-recap" id="orderRecap"></div>
+        <div class="form-error" id="formError" hidden></div>
+        <div class="field">
+          <label for="custName">Nama lengkap</label>
+          <input id="custName" name="name" type="text" placeholder="Contoh: Budi Santoso" maxlength="80" required>
+        </div>
+        <div class="field">
+          <label for="custWa">Nomor WhatsApp</label>
+          <input id="custWa" name="whatsapp" type="tel" inputmode="numeric" placeholder="08xxxxxxxxxx" maxlength="18" required>
+          <p class="hint">Kami kirim konfirmasi dan status pesanan ke nomor ini.</p>
+        </div>
+        <div class="field">
+          <label for="custAddress">Alamat pengantaran / catatan lokasi</label>
+          <textarea id="custAddress" name="address" placeholder="Jl. Contoh No. 12, RT 03/RW 05, Kel. …" maxlength="300" required></textarea>
+        </div>
+        <div class="field">
+          <label for="custNotes">Catatan tambahan <span style="font-weight:500;color:var(--muted)">(opsional)</span></label>
+          <textarea id="custNotes" name="notes" placeholder="Contoh: tanpa bawang, level pedas 3, saus terpisah" maxlength="300"></textarea>
+        </div>
+        <button class="btn btn-red btn-block" id="submitOrder" type="submit">Buat Pesanan &amp; Kirim ke WhatsApp</button>
+        <p class="note" style="margin-top:12px">Dengan menekan tombol, pesanan tersimpan di dashboard admin. Membuka WhatsApp bukan bukti pesanan diterima — tunggu balasan konfirmasi kami.</p>
+      </form>
+
+      <div class="success" id="successView" hidden>
+        <div class="tick">✓</div>
+        <h2>Pesanan tercatat!</h2>
+        <p>Terima kasih, <b id="successName">—</b>. Simpan kode pesanan ini.</p>
+        <div class="code-box" id="orderCode">—</div>
+        <p class="total-line">Total: <span id="orderTotal">Rp0</span></p>
+        <div class="actions">
+          <a class="btn btn-red btn-block" id="waLinkBtn" href="#" target="_blank" rel="noopener">Kirim Konfirmasi ke WhatsApp</a>
+          <button class="btn btn-dark btn-block" id="finishBtn" type="button">Tutup &amp; Pesan Lagi</button>
+        </div>
+        <p class="fine">Pesananmu sudah masuk ke dashboard toko. Konfirmasi final dilakukan admin lewat WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/js/app.js" defer></script>
+</body>
+</html>

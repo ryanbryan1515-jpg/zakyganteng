@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#4d020a">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — PIZZAKY.AJA</title>
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<!-- =====================================================================
+     Login
+     ===================================================================== -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <aside class="login-aside">
+      <div class="login-logo">
+        <img src="/images/logo.svg" alt="">
+        <b>PIZZAKY.AJA</b>
+      </div>
+      <h1>Dashboard Toko</h1>
+      <p>Kelola produk, pesanan, stok, dan laporan penjualan PIZZAKY.AJA dari satu tempat.</p>
+      <ul>
+        <li><b>✓</b> CRUD produk &amp; kategori</li>
+        <li><b>✓</b> Pesanan masuk real-time ke database</li>
+        <li><b>✓</b> Stok otomatis berkurang saat checkout</li>
+        <li><b>✓</b> Laporan penjualan &amp; ekspor CSV</li>
+      </ul>
+    </aside>
+    <div class="login-form">
+      <h2>Masuk sebagai Admin</h2>
+      <p>Gunakan akun administrator toko.</p>
+      <form id="loginForm" novalidate>
+        <div class="form-error" id="loginError" hidden></div>
+        <div class="field">
+          <label for="loginUser">Username</label>
+          <input id="loginUser" name="username" type="text" autocomplete="username" required autofocus>
+        </div>
+        <div class="field">
+          <label for="loginPass">Password</label>
+          <input id="loginPass" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn-red" id="loginBtn" type="submit" style="width:100%;margin-top:6px;padding:12px">Masuk Dashboard</button>
+      </form>
+      <div class="hint-box">
+        <b>Kredensial awal:</b> username <b>admin</b> / password <b>admin</b>.
+        Segera ganti password di menu <b>Akun Admin</b> setelah login pertama.
+      </div>
+      <a class="back-link" href="/">← Kembali ke website pelanggan</a>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     Dashboard shell
+     ===================================================================== -->
+<div class="app" id="appShell" hidden>
+  <div class="sb-backdrop" id="sbBackdrop"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-brand">
+      <img src="/images/logo.svg" alt="">
+      <div><b>PIZZAKY.AJA</b><span>Admin Panel</span></div>
+    </div>
+    <nav class="sb-nav" aria-label="Navigasi admin">
+      <a href="#dashboard" data-page="dashboard">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Dashboard
+      </a>
+      <a href="#produk" data-page="produk">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+        Produk
+      </a>
+      <a href="#kategori" data-page="kategori">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h11"/></svg>
+        Kategori
+      </a>
+      <a href="#pesanan" data-page="pesanan">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9 12h7M9 16h5"/></svg>
+        Pesanan
+        <span id="navOrderBadge" style="margin-left:auto;background:#ffbd08;color:#4a0209;font-size:10.5px;font-weight:900;border-radius:10px;padding:1px 6px;display:none"></span>
+      </a>
+      <a href="#stok" data-page="stok">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg>
+        Stok
+      </a>
+      <a href="#laporan" data-page="laporan">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        Laporan Penjualan
+      </a>
+      <a href="#pengaturan" data-page="pengaturan">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2 2 2 0 1 1-4 0 1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3 15a2 2 0 1 1 0-4 1.7 1.7 0 0 0 1.4-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 10 4a2 2 0 1 1 4 0 1.7 1.7 0 0 0 2.9 1.4l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.7 1.7 0 0 0 21 11a2 2 0 1 1 0 4 1.7 1.7 0 0 0-1.6 1z"/></svg>
+        Pengaturan Website
+      </a>
+      <a href="#akun" data-page="akun">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5S20 17 20 21"/></svg>
+        Akun Admin
+      </a>
+      <div class="sep"></div>
+      <button type="button" id="logoutBtn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg>
+        Logout
+      </button>
+    </nav>
+    <div class="sb-foot">
+      <b>Prototype lokal</b>
+      Data tersimpan di database SQLite server.
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="hamb-admin" id="hambAdmin" aria-label="Buka navigasi">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <p id="pageSub">Ringkasan toko hari ini</p>
+      </div>
+      <div class="topbar-actions">
+        <a class="btn btn-ghost btn-sm" href="/" target="_blank" rel="noopener">Lihat Toko ↗</a>
+        <div class="user-chip">
+          <div class="avatar" id="adminAvatar">A</div>
+          <div><b id="adminName">admin</b><span>Administrator</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content" id="page">
+      <div class="skel" style="height:110px"></div>
+      <div class="skel" style="height:280px"></div>
+    </main>
+  </div>
+</div>
+
+<!-- =====================================================================
+     Modals
+     ===================================================================== -->
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card wide">
+    <div class="modal-head">
+      <div>
+        <h2 id="productModalTitle">Tambah Produk</h2>
+        <p>Perubahan langsung tampil di halaman pelanggan.</p>
+      </div>
+      <button class="icon-btn" data-close aria-label="Tutup">✕</button>
+    </div>
+    <form class="modal-body" id="productForm" novalidate>
+      <div class="form-error" id="productError" hidden></div>
+      <div class="field">
+        <label for="pName">Nama produk</label>
+        <input id="pName" name="name" maxlength="80" required>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="pCategory">Kategori</label>
+          <select id="pCategory" name="category_id"></select>
+        </div>
+        <div class="field">
+          <label for="pSpice">Level pedas</label>
+          <select id="pSpice" name="spice_level">
+            <option value="0">0 — tidak pedas</option>
+            <option value="1">1 — sedikit pedas</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7 — paling pedas</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-grid-3">
+        <div class="field">
+          <label for="pPrice">Harga (Rp)</label>
+          <input id="pPrice" name="price" type="number" min="0" max="10000000" step="500" required>
+        </div>
+        <div class="field">
+          <label for="pStock">Stok</label>
+          <input id="pStock" name="stock" type="number" min="0" max="100000" step="1" required>
+        </div>
+        <div class="field">
+          <label for="pSize">Ukuran</label>
+          <input id="pSize" name="size" list="sizeOptions" maxlength="20" placeholder="30 cm" required>
+          <datalist id="sizeOptions">
+            <option value="25 cm"></option><option value="30 cm"></option><option value="35 cm"></option>
+            <option value="40 cm"></option>
+          </datalist>
+        </div>
+      </div>
+      <div class="field">
+        <label for="pDesc">Deskripsi</label>
+        <textarea id="pDesc" name="description" maxlength="400" placeholder="Topping, rasa, dan keunggulan produk…"></textarea>
+      </div>
+      <div class="field">
+        <label>Foto produk</label>
+        <div class="upload-row">
+          <div class="upload-preview" id="pPreview"></div>
+          <div style="flex:1">
+            <label class="file-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+              Unggah gambar
+              <input type="file" id="pImageFile" accept="image/png,image/jpeg,image/webp,image/gif">
+            </label>
+            <input id="pImage" name="image" placeholder="/images/logo.svg atau /uploads/…" style="margin-top:8px">
+            <p class="hint">JPG/PNG/WEBP/GIF maks 3 MB. Atau isi URL gambar yang sudah ada.</p>
+          </div>
+        </div>
+      </div>
+      <label class="switch"><input type="checkbox" id="pActive" checked> Produk aktif (tampil di website)</label>
+      <div class="modal-foot" style="padding:18px 0 0">
+        <button class="btn btn-ghost" type="button" data-close>Batal</button>
+        <button class="btn btn-red" id="productSubmit" type="submit">Simpan Produk</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card wide">
+    <div class="modal-head">
+      <div>
+        <h2 id="orderModalTitle">Detail Pesanan</h2>
+        <p id="orderModalSub">—</p>
+      </div>
+      <button class="icon-btn" data-close aria-label="Tutup">✕</button>
+    </div>
+    <div class="modal-body" id="orderDetail"></div>
+  </div>
+</div>
+
+<div class="modal" id="stockModal" role="dialog" aria-modal="true" aria-labelledby="stockModalTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card narrow">
+    <div class="modal-head">
+      <div>
+        <h2 id="stockModalTitle">Atur Stok</h2>
+        <p id="stockModalSub">—</p>
+      </div>
+      <button class="icon-btn" data-close aria-label="Tutup">✕</button>
+    </div>
+    <form class="modal-body" id="stockForm">
+      <div class="form-error" id="stockError" hidden></div>
+      <div class="field">
+        <label for="stockMode">Mode</label>
+        <select id="stockMode">
+          <option value="set">Atur jumlah stok</option>
+          <option value="add">Tambah stok</option>
+          <option value="remove">Kurangi stok</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="stockValue">Jumlah</label>
+        <input id="stockValue" type="number" min="0" max="100000" value="0" required>
+      </div>
+      <div class="modal-foot" style="padding:6px 0 0">
+        <button class="btn btn-ghost" type="button" data-close>Batal</button>
+        <button class="btn btn-red" type="submit">Simpan Stok</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="categoryModal" role="dialog" aria-modal="true" aria-labelledby="categoryModalTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card narrow">
+    <div class="modal-head">
+      <div>
+        <h2 id="categoryModalTitle">Tambah Kategori</h2>
+        <p>Kategori dipakai untuk filter di halaman pelanggan.</p>
+      </div>
+      <button class="icon-btn" data-close aria-label="Tutup">✕</button>
+    </div>
+    <form class="modal-body" id="categoryForm" novalidate>
+      <div class="form-error" id="categoryError" hidden></div>
+      <div class="field">
+        <label for="cName">Nama kategori</label>
+        <input id="cName" maxlength="40" required>
+      </div>
+      <div class="field">
+        <label for="cDesc">Deskripsi singkat</label>
+        <textarea id="cDesc" maxlength="160"></textarea>
+      </div>
+      <div class="field">
+        <label for="cSort">Urutan tampil</label>
+        <input id="cSort" type="number" min="0" max="999" value="99">
+      </div>
+      <div class="modal-foot" style="padding:6px 0 0">
+        <button class="btn btn-ghost" type="button" data-close>Batal</button>
+        <button class="btn btn-red" type="submit">Simpan Kategori</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card narrow">
+    <div class="modal-head">
+      <div>
+        <h2 id="confirmTitle">Konfirmasi</h2>
+        <p id="confirmMessage">—</p>
+      </div>
+      <button class="icon-btn" data-close aria-label="Tutup">✕</button>
+    </div>
+    <div class="modal-body" style="padding-top:6px">
+      <div class="modal-foot" style="padding:0">
+        <button class="btn btn-ghost" type="button" data-close>Batal</button>
+        <button class="btn btn-red" id="confirmYes" type="button">Ya, lanjutkan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/js/admin.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "pizzaky-aja",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PIZZAKY.AJA — Sausage Day pizza ordering website with admin dashboard",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "reset": "node tools/reset.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.1"
+  }
+}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img">
+  <defs>
+    <radialGradient id="cheese-g6veggie" cx="42%" cy="36%" r="70%">
+      <stop offset="0%" stop-color="#ffe9a0"/><stop offset="100%" stop-color="#e9be55"/>
+    </radialGradient>
+    <radialGradient id="crust-g6veggie" cx="50%" cy="45%" r="55%">
+      <stop offset="72%" stop-color="#d98b2b"/><stop offset="100%" stop-color="#a95c14"/>
+    </radialGradient>
+    <radialGradient id="bg-g6veggie" cx="20%" cy="15%" r="95%">
+      <stop offset="0%" stop-color="#fff4e2"/><stop offset="60%" stop-color="#ffe6c9"/><stop offset="100%" stop-color="#f6cf9f"/>
+    </radialGradient>
+    <filter id="sh-g6veggie" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#7a2d00" flood-opacity=".35"/>
+    </filter>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg-g6veggie)"/>
+  <circle cx="520" cy="90" r="150" fill="#ffbd08" opacity=".13"/>
+  <circle cx="80" cy="520" r="130" fill="#c8102e" opacity=".09"/>
+  <g filter="url(#sh-g6veggie)">
+    <circle cx="300" cy="300" r="222" fill="url(#crust-g6veggie)"/>
+    <circle cx="300" cy="300" r="196" fill="#e0a24a"/>
+    <circle cx="300" cy="300" r="184" fill="url(#cheese-g6veggie)"/>
+    <circle cx="280" cy="270" r="150" fill="#fff3b8" opacity=".18"/>
+    <g transform="translate(250 200) rotate(20)">
+        <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#2f8b3a"/>
+        <rect x="-26" y="-5" width="52" height="10" rx="5" fill="#57b04f"/></g><g transform="translate(350 230) rotate(-25)">
+        <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#2f8b3a"/>
+        <rect x="-26" y="-5" width="52" height="10" rx="5" fill="#57b04f"/></g><g transform="translate(270 320) rotate(65)">
+        <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#2f8b3a"/>
+        <rect x="-26" y="-5" width="52" height="10" rx="5" fill="#57b04f"/></g><g transform="translate(360 350) rotate(10)">
+        <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#2f8b3a"/>
+        <rect x="-26" y="-5" width="52" height="10" rx="5" fill="#57b04f"/></g><g transform="translate(300 410) rotate(-40)">
+        <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#2f8b3a"/>
+        <rect x="-26" y="-5" width="52" height="10" rx="5" fill="#57b04f"/></g><g transform="translate(205 300) rotate(30)">
+        <rect x="-34" y="-10" width="68" height="20" rx="10" fill="#2f8b3a"/>
+        <rect x="-26" y="-5" width="52" height="10" rx="5" fill="#57b04f"/></g><g><circle cx="320" cy="180" r="19" fill="#3a2a1a"/><circle cx="320" cy="180" r="11" fill="#8a6a3f"/><circle cx="320" cy="180" r="5" fill="#e7d6ad"/></g><g><circle cx="230" cy="385" r="19" fill="#3a2a1a"/><circle cx="230" cy="385" r="11" fill="#8a6a3f"/><circle cx="230" cy="385" r="5" fill="#e7d6ad"/></g><g><circle cx="390" cy="300" r="19" fill="#3a2a1a"/><circle cx="390" cy="300" r="11" fill="#8a6a3f"/><circle cx="390" cy="300" r="5" fill="#e7d6ad"/></g><g><circle cx="265" cy="265" r="19" fill="#3a2a1a"/><circle cx="265" cy="265" r="11" fill="#8a6a3f"/><circle cx="265" cy="265" r="5" fill="#e7d6ad"/></g><g><circle cx="355" cy="415" r="19" fill="#3a2a1a"/><circle cx="355" cy="415" r="11" fill="#8a6a3f"/><circle cx="355" cy="415" r="5" fill="#e7d6ad"/></g><circle cx="290" cy="240" r="14" fill="#e33b2e"/><circle cx="290" cy="240" r="7" fill="#ff7a5e"/><circle cx="330" cy="330" r="14" fill="#e33b2e"/><circle cx="330" cy="330" r="7" fill="#ff7a5e"/><circle cx="240" cy="310" r="14" fill="#e33b2e"/><circle cx="240" cy="310" r="7" fill="#ff7a5e"/>
+    <g opacity=".22" fill="#fff">
+      <circle cx="255" cy="235" r="4"/><circle cx="345" cy="290" r="3"/><circle cx="300" cy="355" r="4"/>
+      <circle cx="365" cy="215" r="3"/><circle cx="215" cy="335" r="3"/></g>
+  </g>
+  <g fill="#a95c14" opacity=".35">
+    <circle cx="300" cy="84" r="7"/><circle cx="140" cy="180" r="6"/><circle cx="470" cy="195" r="6"/>
+    <circle cx="470" cy="420" r="6"/><circle cx="150" cy="445" r="7"/><circle cx="300" cy="516" r="6"/></g>
+</svg>
